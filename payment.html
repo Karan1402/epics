@@ -1,0 +1,419 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+            * {
+      box-sizing: border-box;
+    }
+    body {
+      font-size: 14px;
+    }
+    .main {
+      width: 100%;
+      height: 801px;
+      background: rgba(255,255,255,1);
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      overflow: hidden;
+    }
+    .header {
+      width: 100%;
+      height: 98px;
+      background: linear-gradient(rgba(146,95,226,1), rgba(223,207,247,1));
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      overflow: hidden;
+    }
+    .left {
+      width: 286px;
+      color: rgba(255,255,255,1);
+      position: absolute;
+      top: 23px;
+      left: 21px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: Poppins;
+      font-weight: ExtraBold;
+      font-size: 24px;
+      opacity: 1;
+      text-align: center;
+    }
+    .cancel {
+      width: 109px;
+      height: 30px;
+      background: url("../images/v525_100.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 33px;
+      left: 1140px;
+      overflow: hidden;
+    }
+    .button {
+      width: 109px;
+      color: rgba(123,31,162,1);
+      position: absolute;
+      top: 2px;
+      left: 0px;
+      font-family: Almarai;
+      font-weight: Bold;
+      font-size: 20px;
+      opacity: 1;
+      text-align: center;
+    }
+    .bg {
+      width: 541px;
+      height: 703px;
+      background: rgba(197,201,206,0.30000001192092896);
+      opacity: 1;
+      position: absolute;
+      top: 98px;
+      left: 746px;
+      overflow: hidden;
+    }
+    .check {
+      width: 277px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 122px;
+      left: 99px;
+      font-family: Literata;
+      font-weight: Bold;
+      font-size: 32px;
+      opacity: 1;
+      text-align: center;
+    }
+    .pay {
+      width: 213px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 400px;
+      left: 148px;
+      font-family: Mukta;
+      font-weight: Bold;
+      font-size: 24px;
+      opacity: 1;
+      text-align: center;
+    }
+    .order {
+      width: 157px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 530px;
+      left: 164px;
+      font-family: Mukta;
+      font-weight: Bold;
+      font-size: 24px;
+      opacity: 1;
+      text-align: left;
+    }
+    .edu {
+      width: 472px;
+      color: rgba(111,111,111,1);
+      position: absolute;
+      top: 346px;
+      left: 164px;
+      font-family: MS PGothic;
+      font-weight: Regular;
+      font-size: 12px;
+      opacity: 1;
+      text-align: left;
+    }
+    .first {
+      width: 472px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 563px;
+      left: 192px;
+      font-family: Mplus 1p Bold;
+      font-weight: Bold;
+      font-size: 15px;
+      opacity: 1;
+      text-align: left;
+    }
+    .name {
+      color: #fff;
+    }
+    .se {
+      width: 115px;
+      color: rgba(111,111,111,1);
+      position: absolute;
+      top: 400px;
+      left: 507px;
+      font-family: MS PGothic;
+      font-weight: Regular;
+      font-size: 12px;
+      opacity: 1;
+      text-align: right;
+    }
+    .co {
+      width: 73px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 255px;
+      left: 164px;
+      font-family: Literata;
+      font-weight: Bold;
+      font-size: 16px;
+      opacity: 1;
+      text-align: center;
+    }
+    .re {
+      width: 105px;
+      color: rgba(117,117,117,1);
+      position: absolute;
+      top: 257px;
+      left: 327px;
+      font-family: ABeeZee;
+      font-weight: Regular;
+      font-size: 14px;
+      opacity: 1;
+      text-align: center;
+    }
+    .bill {
+      width: 277px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 213px;
+      left: 102px;
+      font-family: Mukta;
+      font-weight: Bold;
+      font-size: 24px;
+      opacity: 1;
+      text-align: center;
+    }
+    .name {
+      color: #fff;
+    }
+    .prices {
+      width: 677px;
+      height: 337px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 266px;
+      left: 515px;
+      overflow: hidden;
+    }
+    .original {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 42px;
+      left: 352px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: left;
+    }
+    .p1 {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 42px;
+      left: 548px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: right;
+    }
+    .p2 {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 78px;
+      left: 548px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: right;
+    }
+    .p3 {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 132px;
+      left: 548px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: right;
+    }
+    .p4 {
+      width: 114px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 294px;
+      left: 0px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 11px;
+      opacity: 1;
+      text-align: right;
+    }
+    .p5 {
+      width: 114px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 305px;
+      left: 0px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 9px;
+      opacity: 1;
+      text-align: right;
+    }
+    .dis {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 78px;
+      left: 352px;
+      font-family: Mukta;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: left;
+    }
+    .total {
+      width: 128px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 132px;
+      left: 352px;
+      font-family: Mukta;
+      font-weight: ExtraBold;
+      font-size: 20px;
+      opacity: 1;
+      text-align: left;
+    }
+    .p {
+      width: 324px;
+      color: url("../images/v525_124.png");
+      position: absolute;
+      top: 179px;
+      left: 352px;
+      font-family: MS PGothic;
+      font-weight: Regular;
+      font-size: 13px;
+      opacity: 1;
+      text-align: left;
+    }
+    .summary {
+      width: 277px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 0px;
+      left: 352px;
+      font-family: Mukta;
+      font-weight: ExtraBold;
+      font-size: 32px;
+      opacity: 1;
+      text-align: left;
+    }
+    .cobutton {
+      width: 323px;
+      height:55px;
+      color: rgba(0,0,0,1);
+        background-color:rgba(123,31,162,1);
+      position: absolute;
+      top: 236px;
+      left: 369px;
+      font-family: Mukta;
+      font-weight: ExtraBold;
+      font-size: 20px;
+      text-align: center;
+    }
+    .box {
+      width: 469px;
+      height: 81px;
+      background: rgba(234,234,234,1);
+      opacity: 1;
+      position: absolute;
+      top: 439px;
+      left: 167px;
+      border: 1px solid rgba(0,0,0,1);
+      overflow: hidden;
+    }
+
+    .radio1 {
+      width: 133px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 441px;
+      left: 263px;
+      font-family: Mukta;
+      font-weight: Bold;
+      font-size: 15px;
+      opacity: 1;
+      text-align: left;
+    }
+    .radio2 {
+      width: 133px;
+      color: rgba(0,0,0,1);
+      position: absolute;
+      top: 479px;
+      left: 263px;
+      font-family: Mukta;
+      font-weight: Bold;
+      font-size: 15px;
+      opacity: 1;
+      text-align: left;
+    }
+    </style>
+            <title>Payment</title>
+        </head>
+        <body>
+            <div class="main">
+                <div class="header">
+                    <span class="left">Education Route Map</span>
+                    <div class="cancel">
+                        <button class="button" >Cancel </button>
+                        </div>
+                </div>
+                <span class="check">Checkout</span>
+                <span class="pay">Payment method</span>
+                <span class="order">Order details</span>
+                <span class="edu">Education Route Map is requried by law to collect applicable transaction taxes for purchase made un certain tax jurisdictions.</span>
+                <span class="first">First Subscription Order Purchase </span>
+                <div class="name"></div>
+                <span class="se">Secured connection</span>
+                <span class="co">Country</span>
+                <span class="re">Required</span>
+                <span class="bill">Billing address</span>
+                <div class="name"></div>
+                <div class="bg"></div><div class="prices">
+                <span class="original">Original Price:</span>
+                <span class="p1">₹250.23</span>
+                <span class="p2">₹50.00</span>
+                <span class="p3">₹200.23</span>
+                <span class="p4">₹200.23</span>
+                <span class="p5">₹250.23</span>
+                <span class="dis">Discounts:</span>
+                <span class="total">Total:</span>
+                <span class="p">By completing your purchase you agree to these Terms of Service.</span>
+                <span class="summary">Summary</span>
+                
+                <button class="cobutton">Complete Checkout</button>
+                </div>            
+                <div class="box"></div>
+                <div class="radio1">
+                <input type="radio" id="card" name="payment" value="card">
+                    <label for="card">Credit/Debit Card</label></div><br>
+                <div class="radio2">
+                <input type="radio" id="paypal" name="payment" value="paypal">
+                    <label for="paypal">Paypal</label></div>
+            </div>
+        </body>
+    </html>

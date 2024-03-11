@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <style>
+      body {
+        /* background-image: url(img/img1.jpg);
+        min-height: 100vh;
+        background-image: url(img/img1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; */
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+        background-color: rgb(254, 254, 254);
+      }
+      .navbar-container {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        display: flex;
+        align-items: flex-start; /* Align items at the top */
+        width: calc(10% - 40px);
+        z-index: 1000;
+      }
+      .navbar {
+        background: linear-gradient(to right, #945ce4, #b084ec);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      .navbar img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      .nav-link {
+        color: white !important;
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+      }
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .search-container {
+        position: relative;
+        margin-top: 29px;
+        margin-left: 184px; /* Adjust as needed */
+      }
+      .search-box {
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .card-container {
+        height: 160px;
+        position: relative;
+        margin-top: 20px;
+        left: calc(6.5% + 80px);
+        width: calc(80% - 40px); /* Half the size of the navbar */
+        background: linear-gradient(to right, #945ce4, #b084ec);
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+
+      .current-date {
+        margin-left: 20px;
+        margin-top: 20px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+      }
+      .welcome-message {
+        margin-left: 20px;
+        margin-top: 100px;
+      }
+
+      .image-container {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+      }
+      .image-container img {
+        max-width: 100%;
+        border-radius: 50%;
+      }
+
+      .container1 {
+        height: 160px;
+        position: relative;
+        /* margin-top: 55px; */
+        left: calc(6.5% + 80px);
+        width: calc(80% - 494px); /* Half the size of the navbar */
+        /* background: linear-gradient(to right, #3c1f5c, #5c3f8e); */
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+        color: white;
+      }
+      .card {
+        height: 120px;
+        position: relative;
+        display: inline-block;
+        width: 110px;
+        /* margin-top: -19px; */
+        /* left: calc(6.5% - 70px); */
+
+        background-color: white;
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        color: rgb(0, 0, 0);
+      }
+
+      #c1 {
+        margin-left: 25px;
+      }
+      #txt {
+        color: black;
+      }
+      .container-right {
+        height: 525px;
+        position: relative;
+        margin-top: -182px;
+        left: calc(6.5% + 785px);
+        width: calc(80% - 740px); /* Half the size of the navbar */
+        /* background: linear-gradient(to right, #3c1f5c, #5c3f8e); */
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+        color: white;
+      }
+      #image {
+        display: flex;
+        border-color: #945ce4;
+        margin: 2px;
+        border: solid 3px #945ce4;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+      }
+      #image:hover {
+        transition: 0.8;
+        box-shadow: 0 0 0.7rem #9c61e9;
+      }
+      #cr {
+        color: black;
+      }
+      .img1 {
+        display: flex;
+      }
+      .card-right {
+        color: black;
+
+        /* height: 300px; */
+        /* position: relative; */
+        /* margin-top: -9px; */
+
+        /* left: calc(6.5% + 785px); */
+        /* width: calc(80% - 663px); Half the size of the navbar */
+        /* background: linear-gradient(to right, #3c1f5c, #5c3f8e); */
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+
+        /* padding: 194px; */
+
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        max-height: 300px;
+        overflow-y: auto;
+
+        /* color: white; */
+      }
+      #txt-right {
+        padding: 10px;
+      }
+
+      .container-last {
+        height: 234px;
+        position: relative;
+        margin-top: -308px;
+        left: calc(6.5% + 100px);
+        width: calc(80% - 211px); /* Half the size of the navbar */
+        /* background: linear-gradient(to right, #3c1f5c, #5c3f8e); */
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+        color: white;
+      }
+
+      .card1 {
+        border: solid 3px #945ce4;
+        /* background: linear-gradient(to right, #b185e0, #aa8ed1); */
+        height: 120px;
+        position: relative;
+        display: inline-block;
+        width: 241px;
+        /* margin-top: -19px; */
+        left: calc(6.5% - 86px);
+
+        background-color: white;
+        /* Dark purple to light purple gradient */
+        border-radius: 20px;
+        padding: 20px;
+
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        color: rgb(0, 0, 0);
+        background-color: #e8d4f4;
+      }
+      #lc1 {
+        margin-right: 10px;
+      }
+      #lc2 {
+        margin-left: 20px;
+      }
+      #txt-cl {
+        color: #7d4dc0;
+        font-size: 1em;
+        font-weight: 900;
+      }
+      .btn {
+        margin-top: 35px;
+        display: inline-block;
+        border-radius: 2.5rem;
+        padding: 0.8rem 2.6rem;
+        box-shadow: 0 0 0.7rem #9c61e9;
+        background: #7d4dc0;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        transition: 0.5s ease;
+        text-decoration: none;
+      }
+      .btn:hover {
+        box-shadow: none;
+      }
+      /* Footer Styles */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #945ce4;
+        color: #fff;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <nav class="navbar">
+        <img src="your-image-url.jpg" alt="Education" />
+        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link" href="payment.html">Payment Link</a>
+        <a class="nav-link" href="registrationform.html">Registration</a>
+        <a class="nav-link" href="#">Career Path</a>
+        <a class="nav-link" href="#">Drop Semester</a>
+        <a class="nav-link" href="#">Result</a>
+        <a class="nav-link" href="notice/notice.html">Notice</a>
+        <a class="nav-link" href="schedul.html">Schedule</a>
+        <a class="nav-link" href="Login-page.html">Logout</a>
+      </nav>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-box" placeholder="Search..." />
+    </div>
+
+    <div class="card-container">
+      <div class="current-date" id="date"></div>
+      <div class="welcome-message">
+        <h3>Welcome Back Karan !</h3>
+
+        <p>welcome to choose your career path</p>
+      </div>
+      <div class="image-container">
+        <img src="your-image-url.jpg" alt="Image" />
+      </div>
+    </div>
+
+    <div class="container1" id="supper-cards">
+      <h3 id="txt">Carrer Path</h3>
+      <div class="card">
+        <h3>What career path after 10th</h3>
+      </div>
+      <div class="card" id="c1">
+        <h3>What career path after 12th</h3>
+      </div>
+      <div class="card" id="c1">
+        <h3>What career path after graduation</h3>
+      </div>
+    </div>
+
+    <div class="container-right">
+      <p id="cr">Mentors</p>
+      <div class="img1">
+        <img id="image" src="image.jpeg" alt="" />
+
+        <img id="image" id="imm" src="image.jpeg" alt="" />
+        <img id="image" id="imm" src="image.jpeg" alt="" />
+      </div>
+      <p id="cr">Vision</p>
+
+      <div class="card-right">
+        <p id="txt-right">
+          World class Education: Excellence in education, grounded in ethics and
+          critical thinking, for improvement of life. Cutting edge Research: An
+          innovation ecosystem to extend knowledge and solve critical problems.
+          Impactful People: Happy, accountable, caring and effective workforce
+          and students. Rewarding Co-creations: Active collaboration with
+          national & international industries & universities for productivity
+          and economic development. Service to Society: Service to the region
+          and world through knowledge and compassion.
+        </p>
+      </div>
+    </div>
+
+    <div class="container-last">
+      <p style="color: black">See All</p>
+      <div class="card1" id="lc1">
+        <p id="txt-cl">Guidance and Membership</p>
+        <a href="" class="btn">View</a>
+      </div>
+      <div class="card1" id="lc2">
+        <p id="txt-cl">Carrer exploration</p>
+        <a href="" class="btn">View</a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Education App. All Rights Reserved.</p>
+    </footer>
+
+    <script type="text/javascript">
+      n = new Date();
+      y = n.getFullYear();
+      m = n.getMonth() + 1;
+      d = n.getDate();
+
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+
+      const monthName = monthNames[m];
+
+      document.getElementById("date").innerHTML = monthName + " " + d + "," + y;
+    </script>
+  </body>
+</html>

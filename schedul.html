@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Morning Karan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+      }
+
+      .header {
+        background-color: #945ce4;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .navbar-container {
+        position: absolute;
+        left: 13px;
+        top: 100px;
+        display: flex;
+        align-items: flex-start;
+        width: calc(10% - 40px);
+        z-index: 1000;
+      }
+
+      .navbar {
+        background: linear-gradient(to right, #945ce4, #b084ec);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .nav-link {
+        color: white !important;
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .container {
+        left: -31px;
+        width: 50em;
+        margin: 100px 0px 0px 200px;
+        background-color: #945ce4;
+        height: 20em;
+        border-radius: 20px;
+        position: relative; /* Added */
+      }
+
+      .card-header {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        position: relative;
+      }
+      #ccc2,
+      #ccc3 {
+        margin-top: 20px;
+      }
+
+      .custom-card {
+        padding: 15px;
+        width: 40em;
+        top: 20px;
+        left: 20px;
+        position: relative;
+      }
+
+      #percentage1,
+      #percentage2,
+      #percentage3 {
+        color: #945ce4;
+        position: absolute;
+        top: 50%;
+        right: -1px;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        border: solid 3px #945ce4;
+        border-radius: 100%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+      }
+      #percentage1:hover,
+      #percentage1.active,
+      #percentage2:hover,
+      #percentage2.active,
+      #percentage3:hover,
+      #percentage3.active {
+        box-shadow: 0 0 10px rgb(111, 37, 212, 2);
+        background-color: #945ce4;
+        color: white;
+      }
+
+      #left-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 225px;
+        height: 225px;
+        /* border: 2px solid black; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* border-radius: 50%; */
+        padding: 10px;
+        /* margin-top: -1vmax; */
+        margin-left: 38vmax;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding-right: 10px;
+      }
+
+      .bi-circle {
+        position: absolute;
+        font-size: 10em; /* Adjust font size as needed */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;
+        color: #d3bff3; /* Center vertically */
+        background-color: #d3bff3;
+        border-radius: 100%;
+      }
+      #circle2 {
+        top: 140px;
+        left: 140px;
+        color: #b795ec;
+        background-color: #b795ec;
+        /* width: 100px;
+        height: 100px; */
+        border-radius: 100%;
+        font-size: 5em;
+      }
+      #circle3 {
+        top: 80px;
+        left: 190px;
+        color: #b795ec;
+        background-color: #b795ec;
+        /* width: 100px;
+        height: 100px; */
+        border-radius: 100%;
+        font-size: 2em;
+      }
+      #circle1 {
+        font-size: 5em; /* Decrease the font size to make the circle smaller */
+        width: 149px; /* Decrease the width */
+        height: 147px; /* Decrease the height */
+      }
+
+      #circle1::after {
+        content: "Hrs spend in study"; /* Add your desired text here */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black; /* Adjust text color as needed */
+        font-size: 12px; /* Adjust font size as needed */
+      }
+
+      #left-container2 {
+        /* background-color: red; */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 225px;
+        height: 225px;
+        /* border: 2px solid black; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* border-radius: 50%; */
+        padding: 10px;
+        margin-top: 20vmax;
+        margin-left: 38vmax;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding-right: 10px;
+      }
+      /* Adjust font size as needed */
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="txt-hd">
+        <h1>Good Morning Karan!</h1>
+      </div>
+    </header>
+
+    <section class="navigation-bar">
+      <div class="navbar-container">
+        <nav class="navbar">
+          <img src="your-image-url.jpg" alt="Education" />
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="payment.html">Payment Link</a>
+          <a class="nav-link" href="#">Registration</a>
+          <a class="nav-link" href="#">Career Path</a>
+          <a class="nav-link" href="#">Drop Semester</a>
+          <a class="nav-link" href="#">Result</a>
+          <a class="nav-link" href="#">Notice</a>
+          <a class="nav-link" href="#">Schedule</a>
+          <a class="nav-link" href="#">Logout</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="middle-section">
+      <div class="container">
+        <div class="card custom-card">
+          <div
+            class="card-header"
+            id="card-header1"
+            data-toggle="collapse"
+            data-target="#collapseExample1"
+            aria-expanded="false"
+            aria-controls="collapseExample1"
+          >
+            Task 1
+            <i class="bi bi-percent" id="percentage1"></i>
+            <i class="bi bi-chevron-compact-down" id="d-arrow"></i>
+          </div>
+
+          <div class="collapse" id="collapseExample1">
+            <div class="card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+        </div>
+        <div class="card custom-card" id="ccc2">
+          <div
+            class="card-header"
+            id="card-header2"
+            data-toggle="collapse"
+            data-target="#collapseExample2"
+            aria-expanded="false"
+            aria-controls="collapseExample2"
+          >
+            Tesk 2
+            <i class="bi bi-chevron-compact-down"></i>
+            <i class="bi bi-percent" id="percentage2"></i>
+          </div>
+
+          <div class="collapse" id="collapseExample2">
+            <div class="card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+        </div>
+        <div class="card custom-card" id="ccc3">
+          <div
+            class="card-header"
+            id="card-header3"
+            data-toggle="collapse"
+            data-target="#collapseExample3"
+            aria-expanded="false"
+            aria-controls="collapseExample3"
+          >
+            Tesk 3
+            <i class="bi bi-chevron-compact-down"></i>
+            <i class="bi bi-percent" id="percentage3"></i>
+          </div>
+
+          <div class="collapse" id="collapseExample3">
+            <div class="card-body">
+              Some placeholder content for the collapse component. This panel is
+              hidden by default but revealed when the user activates the
+              relevant trigger.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="leftcards">
+      <div class="container1" id="left-container">
+        <i class="bi bi-circle" id="circle1"> </i>
+        <i class="bi bi-circle" id="circle2"></i>
+        <i class="bi bi-circle" id="circle3"></i>
+      </div>
+    </section>
+    <section class="leftcards2">
+      <div class="container2" id="left-container2">
+        <p>
+          <center>
+            <strong
+              >new cources recommendtion according to carrer path choise</strong
+            >
+          </center>
+        </p>
+      </div>
+    </section>
+    <script>
+      // Script for toggling the active class on click
+      document
+        .getElementById("card-header1")
+        .addEventListener("click", function () {
+          document.getElementById("percentage1").classList.toggle("active");
+          if (
+            percentage2.classList.contains("active") ||
+            percentage3.classList.contains("active")
+          ) {
+            percentage2.classList.remove("active");
+            percentage3.classList.remove("active");
+          }
+        });
+
+      document
+        .getElementById("card-header2")
+        .addEventListener("click", function () {
+          document.getElementById("percentage2").classList.toggle("active");
+          if (
+            percentage1.classList.contains("active") ||
+            percentage3.classList.contains("active")
+          ) {
+            percentage1.classList.remove("active");
+            percentage3.classList.remove("active");
+          }
+        });
+
+      document
+        .getElementById("card-header3")
+        .addEventListener("click", function () {
+          document.getElementById("percentage3").classList.toggle("active");
+          if (
+            percentage1.classList.contains("active") ||
+            percentage2.classList.contains("active")
+          ) {
+            percentage1.classList.remove("active");
+            percentage2.classList.remove("active");
+          }
+        });
+    </script>
+
+    <script>
+      // Wait for the DOM to be ready
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all the collapse buttons
+        var collapseButtons = document.querySelectorAll(
+          '[data-toggle="collapse"]'
+        );
+
+        // Attach click event listener to each collapse button
+        collapseButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            // Get the target collapse element
+            var target = document.querySelector(
+              button.getAttribute("data-target")
+            );
+
+            // Close all other collapse elements
+            collapseButtons.forEach(function (otherButton) {
+              if (otherButton !== button) {
+                var otherTarget = document.querySelector(
+                  otherButton.getAttribute("data-target")
+                );
+                if (otherTarget.classList.contains("show")) {
+                  // Close the other collapse element
+                  $(otherTarget).collapse("hide");
+                }
+              }
+            });
+
+            // Toggle the target collapse element
+            $(target).collapse("toggle");
+          });
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
